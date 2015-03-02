@@ -4,16 +4,45 @@ class Solution:
     @return: A list of lists. See example.
     """
     def subsets(self, S):
-        import itertools
-        # write your code here
+        result = []
+        if (S == None or len(S) == 0):
+            return result
+        res_list = []
         S = sorted(S)
-        combs = []
+        self.subsetsHelper(result, res_list, S, 0)
+        return result
 
-        for i in xrange(1, len(S)+1):
-            els = [list(x) for x in itertools.combinations(S, i)]
-            combs.extend(els)
-        return combs
+    def subsetsHelper(self, result, res_list, S, pos):
+        res_list_new = list(res_list)
+        result.append(res_list_new)
+        for i in xrange(pos, len(S)):
+            res_list.append(S[i])
+            self.subsetsHelper(result, res_list, S, i+1)
+            res_list.pop()
 
+
+
+
+
+        # # write your code here
+        # if len(S) == 0:
+        #     return []
+        # if len(S) == 1:
+        #     return [S]
+        # total = 2 ** len(S)
+        # res = []
+
+        # for i in xrange(total):
+        #     pick = S
+        #     print pick
+        #     bina = bin(i)
+        #     item = []
+        #     for bit in bina:
+        #         if bit == '1':
+        #             item.append(pick.pop())
+        #         elif bit == '0':
+        #             pick.pop()
+        #     res.append(item)
 
 
 
@@ -22,4 +51,4 @@ class Solution:
 
 
 a = Solution()
-print a.subsets([3,2,4,1])
+print a.subsets([1,2,3])
