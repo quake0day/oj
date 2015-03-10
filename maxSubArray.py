@@ -1,3 +1,4 @@
+import sys
 class Solution:
     """
     @param nums: A list of integers
@@ -20,3 +21,8 @@ class Solution:
         		else:
         			break
         return max_
+
+
+a = Solution()
+print a.maxSubArray([-2,2,-3,4,-1,2,1,-5,3])
+
