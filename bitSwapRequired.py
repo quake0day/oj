@@ -43,22 +43,14 @@ class Solution:
     def bitSwapRequired(self, a, b):
         # write your code here
         xor = a ^ b 
-        print bin(xor)
         result = 0
-        i = 0
-        while xor:
-        	if xor & (xor - 1):
-        		result += 1
-        	xor = xor >> 1
-        	i += 1
-        	if i > 32:
-        		break
-
-
-        # while xor:
-        # 	result += 1
-        # 	xor = xor & (xor - 1)
+        index = 0
+        while index < 32:
+            if ((1 << index) & a) != ((1 << index) & b):
+                result += 1
+            index += 1
         return result
+        
 a = Solution()
 print a.bitSwapRequired(14, 31)
 print a.bitSwapRequired(67, 31)
