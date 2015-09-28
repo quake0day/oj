@@ -6,6 +6,7 @@ class ListNode(object):
         self.val = val
         self.next = next
 """
+import sys
 class Solution:
     """
     @param head: The first node of linked list.
@@ -14,13 +15,20 @@ class Solution:
     """
     def partition(self, head, x):
         # write your code here
-        NewList_small = ListNode(None)
-        NewList_large = ListNode(None)
-        while head.next != None:
+        NewList_small = ListNode(-sys.maxint)
+        NewList_large = ListNode(-sys.maxint)
+        smaller = NewList_small
+        larger = NewList_large
+        while head != None:
             if head.val < x:
-                newNode = ListNode(head.val, None)
-                NewList_small.next = newNode
+                smaller.next = head
+                smaller = smaller.next
             else:
-                ListNode.n
+                larger.next = head
+                larger = larger.next
+            head = head.next
+            smaller.next = NewList_large.next 
+            larger.next = None
+        return NewList_small.next
 
 
