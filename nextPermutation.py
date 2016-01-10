@@ -19,3 +19,9 @@ class Solution(object):
             k -= 1
         nums[k] , nums[length-1] = nums[length-1], nums[k]
         nums = nums[0:length]+sorted(nums[length:])
+        return nums
+
+
+a = Solution()
+print a.nextPermutation([1,3,2])
+print a.nextPermutation([1,3,2])
