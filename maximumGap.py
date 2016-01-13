@@ -9,7 +9,6 @@ class Solution:
         maxs = [-1] * (len(num) - 1)
 
         average = (maxNum - minNum-1)//(len(num) - 1) + 1
-        print average
         for i in num:
             if i == minNum or i == maxNum:
                 continue

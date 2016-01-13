@@ -8,7 +8,9 @@ class Solution:
         # write your code here
         res = []
         A = sorted(A)
-        print A
+        n = len(A)
+
+        while i 
 
 # # just loop
 #     def countOfSmallerNumber(self, A, queries):

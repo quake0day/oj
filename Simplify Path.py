@@ -29,4 +29,4 @@ class Solution:
 
 a = Solution()
 
-print a.simplifyPath("/..")
+print a.simplifyPath("/...")

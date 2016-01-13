@@ -10,3 +10,4 @@ class Solution:
         	for j in xrange(i):
         		count[i] += count[j] * count[i-j-1]
         return count[n]
+
