@@ -10,3 +10,4 @@ def powerset(a):
             print "".join(res)
 
 powerset(a)
+

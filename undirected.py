@@ -4,7 +4,7 @@ b = 4
 g = {4:[5], 5:[4,6], 6:[5]}
 q = collections.deque()
 q.append(b)
-final_res = {}
+final_res = {}tyyyyyyyyyyyyyyygccccccccccccfff
 while q:
     node = q.popleft()
     if len(g[node]) != 0:
